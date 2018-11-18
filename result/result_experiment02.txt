@@ -1,0 +1,51 @@
+double lambda = 250;
+	double beta = 1e-6;
+	double tau = 1e-5;
+	double tolerent = 1e-4;
+	int max_gaussseidel = 3;
+	int max_iteration = 10000;
+	double theta = 5;
+	int totalCase = 5;
+	
+SplitBergmanColorInpaint
+CASE: 1
+PSNR: 71.1775
+SSIM: 1
+TIME: 2.22427
+CASE: 2
+PSNR: 37.0869
+SSIM: 0.999993
+TIME: 7.67331
+CASE: 3
+PSNR: 25.3355
+SSIM: 0.999643
+TIME: 29.6926
+CASE: 4
+PSNR: 29.4294
+SSIM: 0.999865
+TIME: 14.2664
+CASE: 5
+PSNR: 33.9475
+SSIM: 0.999969
+TIME: 11.3707
+Linearlize
+CASE: 1
+PSNR: 71.1775
+SSIM: 1
+TIME: 2.25324
+CASE: 2
+PSNR: 37.0869
+SSIM: 0.999993
+TIME: 7.99808
+CASE: 3
+PSNR: 25.3355
+SSIM: 0.999643
+TIME: 28.2892
+CASE: 4
+PSNR: 29.4294
+SSIM: 0.999865
+TIME: 13.0719
+CASE: 5
+PSNR: 33.9475
+SSIM: 0.999969
+TIME: 10.7245

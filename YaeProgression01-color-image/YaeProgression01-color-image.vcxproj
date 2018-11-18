@@ -106,10 +106,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(OPENCV_DIR)\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\build\x64\vc15\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world342.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,16 +145,55 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(OPENCV_DIR)\build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\build\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world342.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CreateLambdaMatrix.h" />
+    <ClInclude Include="DcoefficientInnerFixedPoint.h" />
+    <ClInclude Include="Divergence.h" />
+    <ClInclude Include="Experiment01.h" />
+    <ClInclude Include="Experiment02.h" />
+    <ClInclude Include="Experiment03.h" />
+    <ClInclude Include="Experiment04.h" />
+    <ClInclude Include="Experiment05.h" />
+    <ClInclude Include="ExperimentGaussMultiType.h" />
+    <ClInclude Include="ExplicitTimeMarchingColorInpaint.h" />
+    <ClInclude Include="ExplicitTimeMarchingInpaint.h" />
+    <ClInclude Include="FastMarchingInpaint.h" />
+    <ClInclude Include="FixedPointColorInpaint.h" />
+    <ClInclude Include="FixedPointInpaint.h" />
+    <ClInclude Include="Gradient.h" />
+    <ClInclude Include="InnerFixedPointInpaint.h" />
+    <ClInclude Include="LinearLizeColorInpaint.h" />
+    <ClInclude Include="LinearLizeInpaint.h" />
+    <ClInclude Include="MeanSquareError.h" />
+    <ClInclude Include="MergeColorResult.h" />
+    <ClInclude Include="MultiColorLinearLize.h" />
+    <ClInclude Include="MultiColorSplitBergman.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PeakSignalToNoiseRatio.h" />
+    <ClInclude Include="Signnum.h" />
+    <ClInclude Include="SplitBergmanColorInpaint.h" />
+    <ClInclude Include="SplitBergmanInpaint.h" />
+    <ClInclude Include="StructuralSimilarity.h" />
+    <ClInclude Include="Synthetic.h" />
+    <ClInclude Include="ThaiArt.h" />
+    <ClInclude Include="toDoubleBand.h" />
+    <ClInclude Include="TotalVariation.h" />
+    <ClInclude Include="toUcharBand.h" />
+    <ClInclude Include="uGaussKernel.h" />
+    <ClInclude Include="uSubproblemLinearlizer.h" />
+    <ClInclude Include="uSubproblemSolver.h" />
+    <ClInclude Include="wSubproblemSolver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

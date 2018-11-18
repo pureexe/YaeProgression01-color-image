@@ -13,10 +13,145 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\SplitBergman">
+      <UniqueIdentifier>{364d55a0-11b4-4c6c-b508-e76dec331afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExperimentControl">
+      <UniqueIdentifier>{5370ec35-c612-4b11-9a8c-22dbd67b705e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\InputOutput">
+      <UniqueIdentifier>{ede94afd-4967-47d0-86e3-4517155add95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CalculousFunction">
+      <UniqueIdentifier>{28023185-4e4f-49a9-affb-d3cc38eab986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExplicitTimeMarching">
+      <UniqueIdentifier>{311bf563-b4d0-4077-89f7-6524ae94ed12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FixedPoint">
+      <UniqueIdentifier>{4d98d875-760d-493d-8b7d-dd8f9353e516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Measurement">
+      <UniqueIdentifier>{deace903-e603-47b9-b11a-b6b70b6710b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MultiSplitBergman">
+      <UniqueIdentifier>{d50b51bf-2e8d-42be-b97e-78599dc9e3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MultiLinearLize">
+      <UniqueIdentifier>{22afb378-4b9e-4a0a-ac83-6aa7c5d49853}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FastMarchingInpaint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitBergmanInpaint.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="uSubproblemSolver.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="wSubproblemSolver.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment01.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="ThaiArt.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="toDoubleBand.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="toUcharBand.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateLambdaMatrix.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="Gradient.h">
+      <Filter>Header Files\CalculousFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="Divergence.h">
+      <Filter>Header Files\CalculousFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="TotalVariation.h">
+      <Filter>Header Files\CalculousFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="Synthetic.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplicitTimeMarchingColorInpaint.h">
+      <Filter>Header Files\ExplicitTimeMarching</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplicitTimeMarchingInpaint.h">
+      <Filter>Header Files\ExplicitTimeMarching</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedPointColorInpaint.h">
+      <Filter>Header Files\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedPointInpaint.h">
+      <Filter>Header Files\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="InnerFixedPointInpaint.h">
+      <Filter>Header Files\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="DcoefficientInnerFixedPoint.h">
+      <Filter>Header Files\FixedPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="uGaussKernel.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="Signnum.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitBergmanColorInpaint.h">
+      <Filter>Header Files\SplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="PeakSignalToNoiseRatio.h">
+      <Filter>Header Files\Measurement</Filter>
+    </ClInclude>
+    <ClInclude Include="MeanSquareError.h">
+      <Filter>Header Files\Measurement</Filter>
+    </ClInclude>
+    <ClInclude Include="StructuralSimilarity.h">
+      <Filter>Header Files\Measurement</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiColorSplitBergman.h">
+      <Filter>Header Files\MultiSplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeColorResult.h">
+      <Filter>Header Files\MultiSplitBergman</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiColorLinearLize.h">
+      <Filter>Header Files\MultiLinearLize</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperimentGaussMultiType.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment02.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearLizeInpaint.h">
+      <Filter>Header Files\MultiLinearLize</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearLizeColorInpaint.h">
+      <Filter>Header Files\MultiLinearLize</Filter>
+    </ClInclude>
+    <ClInclude Include="uSubproblemLinearlizer.h">
+      <Filter>Header Files\MultiLinearLize</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment03.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment04.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment05.h">
+      <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
