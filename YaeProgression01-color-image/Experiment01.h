@@ -11,15 +11,16 @@
 #include "PeakSignalToNoiseRatio.h"
 #include "StructuralSimilarity.h"
 #include "FastMarchingInpaint.h"
+#include <string>
 void Experiment01() {
 	//variable defination
 	double lambda = 250;
-	double beta = 1e-6;
+	double beta = 1e-5;
 	double tau = 1e-5;
 	double tolerent = 1e-4;
-	int max_gaussseidel = 3;
+	int max_gaussseidel = 1;
 	int max_iteration = 10000;
-	double theta = 0.01;
+	double theta = 5;
 	int totalCase = 5;
 	int i = 0;
 	
@@ -37,7 +38,9 @@ void Experiment01() {
 	result = result = FixedPointColorInpaint(toInpaintImage, inpaintDomain, lambda, beta, max_gaussseidel, tolerent, max_iteration);
 	imshow("result", result);
 	waitKey(0);
-	*/
+	*/ 
+	string outputFile;
+	
 	cout << "ExplicitTimeMarchingColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -52,10 +55,13 @@ void Experiment01() {
 		PSNR = PeakSignalToNoiseRatio(result, originalImage);
 		SSIMs = StructuralSimilarity(result, originalImage);
 		SSIM = (SSIMs[0] + SSIMs[1] + SSIMs[2]) / 3.0;
+		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		cout << "TIME: " << timeMeasure << endl;
+		outputFile = "../images_result_ex1/timemarch0"+to_string(i)+".png";
+		imwrite(outputFile, result.mul(255));
 	}
+	
 	
 	cout << "FixedPointColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
@@ -71,10 +77,13 @@ void Experiment01() {
 		PSNR = PeakSignalToNoiseRatio(result, originalImage);
 		SSIMs = StructuralSimilarity(result, originalImage);
 		SSIM = (SSIMs[0] + SSIMs[1] + SSIMs[2]) / 3.0;
+		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		cout << "TIME: " << timeMeasure << endl;
+		outputFile = "../images_result_ex1/fixpoint0" + to_string(i) + ".png";
+		imwrite(outputFile, result.mul(255));
 	}
+
 	cout << "SplitBergmanColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -89,8 +98,22 @@ void Experiment01() {
 		PSNR = PeakSignalToNoiseRatio(result, originalImage);
 		SSIMs = StructuralSimilarity(result, originalImage);
 		SSIM = (SSIMs[0] + SSIMs[1] + SSIMs[2]) / 3.0;
+		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		cout << "TIME: " << timeMeasure << endl;
+		outputFile = "../images_result_ex1/splitbergman0" + to_string(i) + ".png";
+		imwrite(outputFile, result.mul(255));
 	}
+
 }
+
+/*double lambda = 250;
+	double beta = 1e-6;
+	double tau = 1e-5;
+	double tolerent = 1e-4;
+	int max_gaussseidel = 3;
+	int max_iteration = 10000;
+	double theta = 10;
+	int totalCase = 5;
+	int i = 0;
+*/

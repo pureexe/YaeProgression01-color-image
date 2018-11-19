@@ -153,6 +153,12 @@
     <ClInclude Include="Experiment05.h">
       <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
+    <ClInclude Include="ExperimentTest.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="iminfo.h">
+      <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

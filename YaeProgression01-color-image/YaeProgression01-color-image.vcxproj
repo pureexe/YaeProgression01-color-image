@@ -166,12 +166,14 @@
     <ClInclude Include="Experiment04.h" />
     <ClInclude Include="Experiment05.h" />
     <ClInclude Include="ExperimentGaussMultiType.h" />
+    <ClInclude Include="ExperimentTest.h" />
     <ClInclude Include="ExplicitTimeMarchingColorInpaint.h" />
     <ClInclude Include="ExplicitTimeMarchingInpaint.h" />
     <ClInclude Include="FastMarchingInpaint.h" />
     <ClInclude Include="FixedPointColorInpaint.h" />
     <ClInclude Include="FixedPointInpaint.h" />
     <ClInclude Include="Gradient.h" />
+    <ClInclude Include="iminfo.h" />
     <ClInclude Include="InnerFixedPointInpaint.h" />
     <ClInclude Include="LinearLizeColorInpaint.h" />
     <ClInclude Include="LinearLizeInpaint.h" />

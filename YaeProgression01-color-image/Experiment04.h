@@ -29,7 +29,7 @@ void Experiment04() {
 	for (j = 0; j < 7; j++) {
 		cout << "===========" << endl;
 		if (j == 0) {
-			cout << "LOOP: 10" << endl;
+			cout << "LOOP: " << pattern[j][1]  << endl;
 		}
 		else {
 			cout << "LOOP: " << pattern[j][1] << "/";
@@ -40,7 +40,7 @@ void Experiment04() {
 		}
 		for (i = 1; i <= totalCase; i++) {
 			cout << "---------" << endl;
-			cout << "CASE: " << i << endl;
+			cout << "CASE: " << pattern[j][3] << endl;
 			multi_coarse = pattern[j][1];
 			multi_mid = pattern[j][2];
 			max_step = pattern[j][0];
@@ -51,7 +51,7 @@ void Experiment04() {
 			inpaintDomain = getSyntheticDomain(i);
 			if (j == 0) {
 				t1 = high_resolution_clock::now();
-				result = SplitBergmanColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, 10);
+				result = SplitBergmanColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_fine);
 				t2 = high_resolution_clock::now();
 			}
 			else {

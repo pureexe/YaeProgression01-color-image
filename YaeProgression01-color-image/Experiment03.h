@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "Synthetic.h"
 #include "toDoubleBand.h"
+#include "MultiColorSplitBergman.h"
 #include "MultiColorLinearLize.h"
 #include "PeakSignalToNoiseRatio.h"
 #include "StructuralSimilarity.h"

@@ -1,0 +1,202 @@
+	double lambda = 250;
+	double beta = 1e-6;
+	double tau = 1e-5;
+	double tolerent = 1e-4;
+	int max_gaussseidel = 3;
+	double theta = 0.01;
+	int totalCase = 5;
+	int i = 0, j = 0;
+	int multi_coarse, multi_mid, multi_fine, max_step, current_step;
+	// depth,coarse, mid, fine
+	int pattern[7][4] = { {1,1,1,10000}, {4,10,1,10000}, {4,10,3,10000}, {4,10,10,10000}, {4,100,1,10000}, {4,100,3,10000}, {4,100,10,10000} };
+
+Gauss-seidel Inpaint
+===========
+LOOP: 10000
+---------
+CASE: 1
+TIME: 1.946
+PSNR: 37.1275
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 8.46519
+PSNR: 34.2381
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 32.2807
+PSNR: 21.1543
+SSIM: 0.999086
+---------
+CASE: 4
+TIME: 11.6406
+PSNR: 27.998
+SSIM: 0.999844
+---------
+CASE: 5
+TIME: 14.1194
+PSNR: 33.1283
+SSIM: 0.999954
+===========
+LOOP: 10/1/1/10000
+---------
+CASE: 1
+TIME: 1.57175
+PSNR: 37.15
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 5.66536
+PSNR: 34.2649
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 22.3705
+PSNR: 20.3208
+SSIM: 0.998842
+---------
+CASE: 4
+TIME: 6.75259
+PSNR: 27.9577
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 7.23483
+PSNR: 33.1226
+SSIM: 0.999954
+===========
+LOOP: 10/3/3/10000
+---------
+CASE: 1
+TIME: 0.894268
+PSNR: 37.17
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 3.47086
+PSNR: 34.2778
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 14.6202
+PSNR: 20.5677
+SSIM: 0.998898
+---------
+CASE: 4
+TIME: 4.69426
+PSNR: 27.9607
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 5.35257
+PSNR: 33.1484
+SSIM: 0.999954
+===========
+LOOP: 10/10/10/10000
+---------
+CASE: 1
+TIME: 0.960082
+PSNR: 37.1706
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 1.92956
+PSNR: 34.2407
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 3.81926
+PSNR: 20.7057
+SSIM: 0.998943
+---------
+CASE: 4
+TIME: 3.34923
+PSNR: 27.9592
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 2.99228
+PSNR: 33.1499
+SSIM: 0.999954
+===========
+LOOP: 100/1/1/10000
+---------
+CASE: 1
+TIME: 1.29107
+PSNR: 37.15
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 5.01731
+PSNR: 34.2648
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 10.2684
+PSNR: 20.9152
+SSIM: 0.999006
+---------
+CASE: 4
+TIME: 6.33376
+PSNR: 27.9583
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 6.28713
+PSNR: 33.1518
+SSIM: 0.999954
+===========
+LOOP: 100/3/3/10000
+---------
+CASE: 1
+TIME: 0.853919
+PSNR: 37.17
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 3.26323
+PSNR: 34.2777
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 9.27195
+PSNR: 20.891
+SSIM: 0.998998
+---------
+CASE: 4
+TIME: 4.37084
+PSNR: 27.9606
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 4.70201
+PSNR: 33.1464
+SSIM: 0.999954
+===========
+LOOP: 100/10/10/10000
+---------
+CASE: 1
+TIME: 0.895746
+PSNR: 37.1706
+SSIM: 0.999985
+---------
+CASE: 2
+TIME: 1.83078
+PSNR: 34.2407
+SSIM: 0.999969
+---------
+CASE: 3
+TIME: 3.09185
+PSNR: 20.8484
+SSIM: 0.998987
+---------
+CASE: 4
+TIME: 3.40823
+PSNR: 27.9588
+SSIM: 0.999843
+---------
+CASE: 5
+TIME: 2.84903
+PSNR: 33.1498
+SSIM: 0.999954

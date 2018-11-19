@@ -7,7 +7,7 @@
 #include "FastMarchingInpaint.h"
 #include "PeakSignalToNoiseRatio.h"
 #include "StructuralSimilarity.h"
-#include "SplitBergmanColorInpaint.h"
+#include "MultiColorSplitBergman.h"
 void Experiment05() {
 	double lambda = 250;
 	double beta = 1e-6;
@@ -55,7 +55,7 @@ void Experiment05() {
 		cout << "SSIM: " << SSIM << endl;
 	}
 	cout << "===========" << endl;
-	cout << "Linearlize" << endl;
+	cout << "Splitbergman" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "---------" << endl;
 		cout << "CASE: " << i << endl;		
@@ -64,7 +64,7 @@ void Experiment05() {
 		originalImage = toDoubleBand(getThaiArtOriginal(i));
 		inpaintDomain = getThaiArtDomain();
 		t1 = high_resolution_clock::now();
-		result = MultiColorLinearLize(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
+		result = MultiColorSplitBergman(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
 		t2 = high_resolution_clock::now();
 		duration = duration_cast<microseconds>(t2 - t1).count();
 		timeMeasure = duration / 1000000.0;
