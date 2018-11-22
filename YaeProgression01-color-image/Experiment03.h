@@ -6,18 +6,23 @@
 #include "MultiColorLinearLize.h"
 #include "PeakSignalToNoiseRatio.h"
 #include "StructuralSimilarity.h"
+#include "string"
 void Experiment03() {
+
 	double lambda = 250;
-	double beta = 1e-6;
+	double beta = 1e-5;
 	double tau = 1e-5;
 	double tolerent = 1e-4;
-	int max_gaussseidel = 3;
-	double theta = 0.01;
+	int max_gaussseidel = 1;
+	int max_iteration = 10000;
+	double theta = 5;
 	int totalCase = 5;
+
 	int i = 0, j = 0;
+	string outputFile;
 	int multi_coarse, multi_mid, multi_fine, max_step, current_step;
 	// depth,coarse, mid, fine
-	int pattern[7][4] = { {1,1,1,10000}, {4,10,1,10000}, {4,10,3,10000}, {4,10,10,10000}, {4,100,1,10000}, {4,100,3,10000}, {4,100,10,10000} };
+	int pattern[7][4] = { {1,1,1,10}, {4,10,1,10}, {4,10,3,10}, {4,10,10,10}, {4,100,1,10}, {4,100,3,10}, {4,100,10,10} };
 
 	Mat toInpaintImage, originalImage, inpaintDomain, result;
 	high_resolution_clock::time_point t1, t2;
@@ -25,11 +30,11 @@ void Experiment03() {
 	double timeMeasure, PSNR, SSIM;
 	Scalar SSIMs;
 
-	cout << "Linearlize Inpaint" << endl;
+	cout << "Splitbergman Inpaint" << endl;
 	for (j = 0; j < 7; j++) {
 		cout << "===========" << endl;
 		if (j == 0) {
-			cout << "LOOP: 10000" << endl;
+			cout << "LOOP: 10" << endl;
 		} else {
 			cout << "LOOP: " << pattern[j][1] << "/";
 			for (i = 1; i < pattern[j][0] - 1; i++) {
@@ -50,13 +55,15 @@ void Experiment03() {
 			inpaintDomain = getSyntheticDomain(i);
 			if (j == 0) {
 				t1 = high_resolution_clock::now();
-				result = LinearLizeColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, 10000);
+				result = SplitBergmanColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, 10);
 				t2 = high_resolution_clock::now();
+				outputFile = "../images_result_ex3/singleres_10000_case0"+ to_string(i) +".png";
 			}
 			else {
 				t1 = high_resolution_clock::now();
-				result = MultiColorLinearLize(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
+				result = MultiColorSplitBergman(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
 				t2 = high_resolution_clock::now();
+				outputFile = "../images_result_ex3/multires_" + to_string(multi_coarse) +"-"+ to_string(multi_mid)+ "-" + to_string(multi_mid) + "-" + to_string(multi_fine) + "_case0" + to_string(i) + ".png";
 			}
 			duration = duration_cast<microseconds>(t2 - t1).count();
 			timeMeasure = duration / 1000000.0;
@@ -66,6 +73,7 @@ void Experiment03() {
 			cout << "TIME: " << timeMeasure << endl;
 			cout << "PSNR: " << PSNR << endl;
 			cout << "SSIM: " << SSIM << endl;
+			imwrite(outputFile, result.mul(255));
 		}
 	}
 

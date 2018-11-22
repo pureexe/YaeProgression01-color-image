@@ -7,12 +7,7 @@
 #include "StructuralSimilarity.h"
 #include "MultiColorSplitBergman.h"
 void Experiment04() {
-	double lambda = 250;
-	double beta = 1e-6;
-	double tau = 1e-5;
-	double tolerent = 1e-4;
-	int max_gaussseidel = 3;
-	double theta = 0.01;
+
 	int totalCase = 5;
 	int i = 0, j = 0;
 	int multi_coarse, multi_mid, multi_fine, max_step, current_step;

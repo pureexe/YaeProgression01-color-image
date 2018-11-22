@@ -16,7 +16,7 @@ void Experiment01() {
 	//variable defination
 	double lambda = 250;
 	double beta = 1e-5;
-	double tau = 1e-5;
+	double tau = 1e-5*5.0; //plz try 2.5
 	double tolerent = 1e-4;
 	int max_gaussseidel = 1;
 	int max_iteration = 10000;
@@ -40,7 +40,7 @@ void Experiment01() {
 	waitKey(0);
 	*/ 
 	string outputFile;
-	
+	/*
 	cout << "ExplicitTimeMarchingColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -61,7 +61,7 @@ void Experiment01() {
 		outputFile = "../images_result_ex1/timemarch0"+to_string(i)+".png";
 		imwrite(outputFile, result.mul(255));
 	}
-	
+	*/
 	
 	cout << "FixedPointColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
@@ -83,7 +83,7 @@ void Experiment01() {
 		outputFile = "../images_result_ex1/fixpoint0" + to_string(i) + ".png";
 		imwrite(outputFile, result.mul(255));
 	}
-
+	/*
 	cout << "SplitBergmanColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -103,8 +103,7 @@ void Experiment01() {
 		cout << "SSIM: " << SSIM << endl;
 		outputFile = "../images_result_ex1/splitbergman0" + to_string(i) + ".png";
 		imwrite(outputFile, result.mul(255));
-	}
-
+	}	*/
 }
 
 /*double lambda = 250;

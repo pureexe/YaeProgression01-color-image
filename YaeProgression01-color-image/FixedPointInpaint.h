@@ -15,7 +15,7 @@ Mat FixedPointInpaint(Mat original_image, Mat inpaint_domain, double lambda, dou
 	{
 		last_image = image.clone();
 		image = InnerFixedPointInpaint(image, original_image, lambda_mat, beta, gaussseidel_iteration);
-		res = TotalVariation(image, beta) + (original_image - image);
+		//res = TotalVariation(image, beta) + (original_image - image);
 		image_norm = norm(last_image - image, NORM_L2);
 		i++;
 	}
