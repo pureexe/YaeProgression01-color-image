@@ -29,12 +29,14 @@ void Experiment03() {
 	int duration;
 	double timeMeasure, PSNR, SSIM;
 	Scalar SSIMs;
-
+	cout << "================================" << endl;
+	cout << "Experiment 03 - Image pyramid with 10 fine loop" << endl;
+	cout << "================================" << endl;
 	cout << "Splitbergman Inpaint" << endl;
 	for (j = 0; j < 7; j++) {
 		cout << "===========" << endl;
 		if (j == 0) {
-			cout << "LOOP: 10" << endl;
+			cout << "LOOP: " << pattern[j][2] << endl;
 		} else {
 			cout << "LOOP: " << pattern[j][1] << "/";
 			for (i = 1; i < pattern[j][0] - 1; i++) {
@@ -55,15 +57,15 @@ void Experiment03() {
 			inpaintDomain = getSyntheticDomain(i);
 			if (j == 0) {
 				t1 = high_resolution_clock::now();
-				result = SplitBergmanColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, 10);
+				result = SplitBergmanColorInpaint(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_fine);
 				t2 = high_resolution_clock::now();
-				outputFile = "../images_result_ex3/singleres_10000_case0"+ to_string(i) +".png";
+				outputFile = "../result/ex3/singleres_10000_case0"+ to_string(i) +".png";
 			}
 			else {
 				t1 = high_resolution_clock::now();
 				result = MultiColorSplitBergman(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
 				t2 = high_resolution_clock::now();
-				outputFile = "../images_result_ex3/multires_" + to_string(multi_coarse) +"-"+ to_string(multi_mid)+ "-" + to_string(multi_mid) + "-" + to_string(multi_fine) + "_case0" + to_string(i) + ".png";
+				outputFile = "../result/ex3/multires_" + to_string(multi_coarse) +"-"+ to_string(multi_mid)+ "-" + to_string(multi_mid) + "-" + to_string(multi_fine) + "_case0" + to_string(i) + ".png";
 			}
 			duration = duration_cast<microseconds>(t2 - t1).count();
 			timeMeasure = duration / 1000000.0;

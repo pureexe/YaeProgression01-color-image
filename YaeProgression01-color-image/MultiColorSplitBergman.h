@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "MergeColorResult.h"
 #include "SplitBergmanColorInpaint.h"
+
 Mat MultiColorSplitBergman(Mat original_image, Mat inpaint_domain, double lambda, double theta,
 	double tolerant, int max_gauss_seidel, int multi_coarse, int multi_mid, int multi_fine, int max_step, int current_step)
 {
@@ -28,5 +29,5 @@ Mat MultiColorSplitBergman(Mat original_image, Mat inpaint_domain, double lambda
 			max_iteration = multi_mid;
 		}
 	}
-	return SplitBergmanColorInpaint(toinpaint_image, inpaint_domain, lambda, theta, tolerant, max_gauss_seidel, max_iteration);
+	return SplitBergmanColorInpaint(toinpaint_image, inpaint_domain, lambda, theta, tolerant, max_gauss_seidel, max_iteration, current_step);
 }

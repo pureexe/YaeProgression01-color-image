@@ -29,7 +29,7 @@ void ExperimentTest()
 	multi_coarse = 10;
 	multi_mid = 3;
 	max_step = 4;
-	multi_fine = 10000;
+	multi_fine = 5;
 	current_step = 1;
 	i = 2;
 	toInpaintImage = toDoubleBand(getSyntheticToInpaint(i));
@@ -38,7 +38,7 @@ void ExperimentTest()
 	t1 = high_resolution_clock::now();
 	result = MultiColorSplitBergman(toInpaintImage, inpaintDomain, lambda, theta, tolerent, max_gaussseidel, multi_coarse, multi_mid, multi_fine, max_step, current_step);
 	t2 = high_resolution_clock::now();
-	outputFile = "../only10/only10000time.png";
+	outputFile = "../only10/only5time.png";
 	imwrite(outputFile, result.mul(255));
 	
 }

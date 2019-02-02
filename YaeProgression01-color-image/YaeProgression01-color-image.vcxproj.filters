@@ -132,9 +132,6 @@
     <ClInclude Include="ExperimentGaussMultiType.h">
       <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
-    <ClInclude Include="Experiment02.h">
-      <Filter>Header Files\ExperimentControl</Filter>
-    </ClInclude>
     <ClInclude Include="LinearLizeInpaint.h">
       <Filter>Header Files\MultiLinearLize</Filter>
     </ClInclude>
@@ -147,17 +144,29 @@
     <ClInclude Include="Experiment03.h">
       <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
-    <ClInclude Include="Experiment04.h">
-      <Filter>Header Files\ExperimentControl</Filter>
-    </ClInclude>
-    <ClInclude Include="Experiment05.h">
-      <Filter>Header Files\ExperimentControl</Filter>
-    </ClInclude>
     <ClInclude Include="ExperimentTest.h">
       <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
     <ClInclude Include="iminfo.h">
       <Filter>Header Files\InputOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperimentStepingImage.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperimentLinearLizePerformance.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment02.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperimentCompareWithFastMarching.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperimentPyramidLinearlize.h">
+      <Filter>Header Files\ExperimentControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment04.h">
+      <Filter>Header Files\ExperimentControl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

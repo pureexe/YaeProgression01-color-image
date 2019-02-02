@@ -162,10 +162,13 @@
     <ClInclude Include="Divergence.h" />
     <ClInclude Include="Experiment01.h" />
     <ClInclude Include="Experiment02.h" />
-    <ClInclude Include="Experiment03.h" />
     <ClInclude Include="Experiment04.h" />
-    <ClInclude Include="Experiment05.h" />
+    <ClInclude Include="ExperimentLinearLizePerformance.h" />
+    <ClInclude Include="Experiment03.h" />
+    <ClInclude Include="ExperimentPyramidLinearlize.h" />
+    <ClInclude Include="ExperimentCompareWithFastMarching.h" />
     <ClInclude Include="ExperimentGaussMultiType.h" />
+    <ClInclude Include="ExperimentStepingImage.h" />
     <ClInclude Include="ExperimentTest.h" />
     <ClInclude Include="ExplicitTimeMarchingColorInpaint.h" />
     <ClInclude Include="ExplicitTimeMarchingInpaint.h" />

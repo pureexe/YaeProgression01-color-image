@@ -1,6 +1,7 @@
 #pragma once
 /***
-* This is experiment runner file
+* Experiment01: Measurement Exist algorithm
+* To compare speed and quality between Time marching,Fixed Point and Split bregman
 **/
 #include "Synthetic.h"
 #include "ThaiArt.h"
@@ -16,7 +17,7 @@ void Experiment01() {
 	//variable defination
 	double lambda = 250;
 	double beta = 1e-5;
-	double tau = 1e-5*5.0; //plz try 2.5
+	double tau = 1e-5*5.0;
 	double tolerent = 1e-4;
 	int max_gaussseidel = 1;
 	int max_iteration = 10000;
@@ -29,18 +30,10 @@ void Experiment01() {
 	int duration;
 	double timeMeasure, PSNR, SSIM;
 	Scalar SSIMs;
-
-	/*
-	i = 4;
-	toInpaintImage = toDoubleBand(getSyntheticToInpaint(i));
-	originalImage = toDoubleBand(getSyntheticOriginal(i));
-	inpaintDomain = getSyntheticDomain(i);
-	result = result = FixedPointColorInpaint(toInpaintImage, inpaintDomain, lambda, beta, max_gaussseidel, tolerent, max_iteration);
-	imshow("result", result);
-	waitKey(0);
-	*/ 
 	string outputFile;
-	/*
+	cout << "================================" << endl;
+	cout << "Experiment 01 - Measurement Exist algorithm" << endl;
+	cout << "================================" << endl;
 	cout << "ExplicitTimeMarchingColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -58,10 +51,9 @@ void Experiment01() {
 		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		outputFile = "../images_result_ex1/timemarch0"+to_string(i)+".png";
+		outputFile = "../result/ex1/timemarch0"+to_string(i)+".png";
 		imwrite(outputFile, result.mul(255));
 	}
-	*/
 	
 	cout << "FixedPointColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
@@ -80,10 +72,10 @@ void Experiment01() {
 		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		outputFile = "../images_result_ex1/fixpoint0" + to_string(i) + ".png";
+		outputFile = "../result/ex1/fixpoint0" + to_string(i) + ".png";
 		imwrite(outputFile, result.mul(255));
 	}
-	/*
+
 	cout << "SplitBergmanColorInpaint" << endl;
 	for (i = 1; i <= totalCase; i++) {
 		cout << "CASE: " << i << endl;
@@ -101,9 +93,9 @@ void Experiment01() {
 		cout << "TIME: " << timeMeasure << endl;
 		cout << "PSNR: " << PSNR << endl;
 		cout << "SSIM: " << SSIM << endl;
-		outputFile = "../images_result_ex1/splitbergman0" + to_string(i) + ".png";
+		outputFile = "../result/ex1/splitbergman0" + to_string(i) + ".png";
 		imwrite(outputFile, result.mul(255));
-	}	*/
+	}
 }
 
 /*double lambda = 250;
